@@ -1,0 +1,29 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href='{% static "css/problemList.css" %}'>
+    <link rel="stylesheet" href='{% static "css/archive.css" %}'>
+{% endblock links %}
+
+{% block main %}
+    <h3 class="personal-head">
+        Архив
+    </h3>
+    <ul class="problem-ul-elems">
+        {% for problem in problems %}
+            <li class="problem-ul-elem">
+                <label>№ {{problem.id}}</label>
+                <input value="{{problem.title}}" readonly/>
+                <a href="/personal/problem_info/{{problem.id}}" class="info-button"><i class="fas fa-info"></i></a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock main %}
+
+{% block footer%}
+    <a href="/personal/archive/clear/" class="footer-button" id="send">Очистить</a>
+{% endblock footer %}
+
+{% block scripts %}
+{% endblock scripts %}

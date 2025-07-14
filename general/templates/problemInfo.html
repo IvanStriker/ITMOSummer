@@ -1,0 +1,54 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href='{% static "css/createProblemForm.css" %}'>
+    <link rel="stylesheet" href='{% static "css/readonly.css" %}'>
+    <link rel="stylesheet" href='{% static "css/problemInfo.css" %}'>
+{% endblock links %}
+
+{% block main %}
+    <h3 class="personal-head">
+        Просмотр задачи
+    </h3>
+    <form id="createProblemForm">
+        <span class="problem-number"><strong>№ {{problem.id}}</strong></span>
+        <span class="problem-state"><i>
+            {% if problem.solved %}
+                Решена
+            {% else %}
+                Не решена
+            {% endif %}
+        </i></span>
+        <ul class="problem-form-elems">
+            <li class="problem-form-elem">
+                <label>Название</label>
+                <input value="{{problem.title}}" class="input" aria-readonly="true" disabled/>
+            </li>
+            <li class="problem-form-elem">
+                <label>Описание</label>
+                <textarea class="input textarea" disabled>{{problem.description}}</textarea>
+            </li>
+            <li class="problem-form-elem">
+                <label class="big-label">Варианты ответов:</label>
+                <a class="plus-button"><i class="fas fa-plus"></i></a>
+            </li>
+        </ul>
+        <ul class="problem-form-elems" id="answers">
+            {% for ans in problem.answer_set.values %}
+                <li class="problem-form-elem">
+                    <label>№</label>
+                    <input class='input' style='margin-right: 20px' value="{{ans.text}}" disabled/>
+                    <a class='trash-button'><i class='fas fa-minus'></i></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a href="/personal/archive/" class="footer-button">К архиву</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/problemInfo.js' %}"></script>
+{% endblock scripts %}

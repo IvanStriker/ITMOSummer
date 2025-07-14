@@ -1,0 +1,7 @@
+.plus-button:hover, .trash-button:hover {
+    cursor: default;
+}
+
+.problem-form-elem textarea:hover {
+    cursor: default;
+}

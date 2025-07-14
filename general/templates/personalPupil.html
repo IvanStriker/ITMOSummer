@@ -1,0 +1,16 @@
+{% extends 'personal.html' %}
+{% load static %}
+{% block personalLinks %}
+    <link rel="stylesheet" href='{% static "css/personalPupil.css" %}'>
+{% endblock personalLinks %}
+
+{% block personalNavbar %}
+    <li>
+        <a href="personal/problem_list/"><i class="fas fa-list-ul"></i><div>К списку задач</div></a>
+    </li>
+    <li>
+        <a href="personal/get_problem/"><i class="fas fa-plus"></i><div>Получить задачу</div></a>
+    </li>
+{% endblock personalNavbar %}
+
+{% block personalShortData %}{% endblock personalShortData %}

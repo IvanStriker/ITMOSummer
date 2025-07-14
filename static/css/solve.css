@@ -1,0 +1,24 @@
+.checkboxSolve {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    align-items: center;
+    text-align: center;
+    margin-right: 41px;
+}
+
+.checkboxSolve:hover {
+    background: #2980b9;
+    cursor: pointer;
+}
+
+.invisible {
+    display: none;
+}

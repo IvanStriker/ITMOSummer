@@ -1,0 +1,19 @@
+{% extends 'personal.html' %}
+{% load static %}
+{% block personalLinks %}
+    <link rel="stylesheet" href='{% static "css/personalAdmin.css" %}'>
+{% endblock personalLinks %}
+
+{% block personalNavbar %}
+    <li>
+        <a href="/personal/new_problem/"><i class="fas fa-plus"></i><div>Создать задачу</div></a>
+    </li>
+    <li>
+        <a href="personal/problem_list/"><i class="fas fa-list-ul"></i><div>К списку задач</div></a>
+    </li>
+    <li>
+        <a href="personal/archive/"><i class="fas fa-folder-open"></i><div>Архив и статистика</div></a>
+    </li>
+{% endblock personalNavbar %}
+
+{% block personalShortData %}{% endblock personalShortData %}

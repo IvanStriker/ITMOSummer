@@ -1,0 +1,76 @@
+.personal-short-data ul li {
+    min-width: 500px;
+}
+
+.personal-value {
+    background: #3498db;
+    border: 0;
+    border-radius: 5px;
+    transition: background 0.3s;
+    outline: none;
+    padding: 10px 10px;
+}
+
+.personal-value:hover, .personal-value:focus {
+    /*background: #71B7E6;*/
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media(max-width:550px){
+	.footer {
+	  flex-direction: column;
+	}
+	.footer-button {
+	  margin: 10px;
+	}
+	.main {
+	  min-width: calc(100% - 20px);
+	  max-width: calc(100% - 20px);
+	  min-height: calc(100% - 160px);
+	  padding: 0 10px;
+	  flex: 1;
+	  margin: 50px 0 160px 0;
+	}
+	.board {
+	  /*width: 80%;*/
+	  flex: none;
+	  flex-shrink: initial;
+	  margin: 0;
+	  margin-top: 10px;
+	}
+	.dashboard {
+	  position: relative;
+	}
+	.personal-short-data {
+	  display: flex;
+	  justify-content: center;
+	  flex-direction: center;
+	}
+	.personal-portrait {
+	  display: none;
+	}
+	.personal-navbar ul {
+	  align-items: center;
+	}
+	.personal-short-data ul {
+	  display: flex;
+	  flex-direction: column;
+	  padding: 0 25px;
+	  margin-bottom: 20px;
+	}
+	.personal-short-data ul li {
+	  width: 300px;
+	  min-width: 300px;
+	  height: 50px;
+	}
+	.personal-value {
+	  max-width: 150px;
+	}
+	.personal-field {
+	  min-width: 100px;
+	  height: 25px;
+	}
+	.personal-head {
+	  margin-bottom: 0;
+	}
+}

@@ -1,0 +1,228 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.personal-head {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    font-family: "Pompadur";
+    font-size: 3em;
+    display: block;
+}
+
+form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+}
+
+.problem-number {
+    border-bottom: 2px solid #3498db;
+    border-radius: 50%;
+    min-width: 80px;
+    height: 19px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.board form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.problem-form-elems {
+    list-style: none;
+    flex: 1;
+    width: 100%;
+    margin: 0;
+}
+
+.problem-form-elem {
+    position: relative;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 1.2em;
+    text-align: left;
+    margin: 0 100px 0 0;
+    width: 470px;
+    height: 32px;
+    transition: inherit;
+    background: #fff;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.select {
+    width: 500px;
+}
+
+.textarea {
+    width: 470px;
+    height: 60px;
+    resize: none;
+    font-size: 1.5em;
+}
+
+
+
+.input:hover {
+    background: #F0F0F0;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+    width: 200px;
+    height: 32px;
+}
+
+.big-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+    width: 300px;
+    margin: 20px 0;
+}
+
+.plus-button {
+    position: absolute;
+    left: 1045px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-align: center;
+}
+
+.plus-button:hover {
+    background: #2980b9;
+    cursor: pointer;
+}
+
+.trash-button {
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 41px;
+}
+
+.trash-button:hover {
+    background: #dc143c;
+    cursor: pointer;
+}
+
+@media(max-width:550px){
+	.footer {
+	  flex-direction: column;
+	}
+	.footer-button {
+	  margin: 10px;
+	}
+	.main {
+	  min-width: calc(100% - 20px);
+	  max-width: calc(100% - 20px);
+	  min-height: calc(100% - 160px);
+	  padding: 0 10px;
+	  flex: 1;
+	  margin: 50px 0 160px 0;
+	}
+	.board {
+	  /*width: 80%;*/
+	  flex: none;
+	  flex-shrink: initial;
+	  margin: 0;
+	  margin-top: 10px;
+	}
+	.dashboard {
+	  position: relative;
+	}
+	.input {
+	  width: 150px;
+	  margin-right: 0px;
+	}
+	.textarea {
+	  width: 150px;
+	  margin-right: 0px;
+	}
+	label, .big-label {
+	  width: 130px;
+	  font-size: 1.3em;
+	}
+	.problem-number {
+	  display: none;
+	}
+	.big-label {
+	  margin: 0;
+	  width: 250px;
+	}
+	.plus-button {
+	  position: relative;
+	  left: 0;
+	  top: 0;
+	}
+	.trash-button {
+	  margin-right: 0;
+	}
+	.problem-form-elems {
+	  padding: 0;
+	}
+	#answers label {
+	  width: 65px;
+	}
+	.personal-head {
+	  font-size: 2.5em;
+	}
+}

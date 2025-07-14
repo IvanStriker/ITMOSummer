@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  {% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href='{% static "css/main.css" %}'>
+    {% block links %} {% endblock links %}
+</head>
+<body>
+    <div class="dashboard">
+        <div class="navbar">
+            <ul class="left-navbar-elems">
+                <li><a href="/"><i class="fas fa-home"></i></a></li>
+            </ul>
+            <ul class="right-navbar-elems">
+                {% block navbar %} {% endblock navbar %}
+            </ul>
+        </div>
+        <div class="main">
+            <div class="board">
+                {% block main%} {% endblock main %}
+            </div>
+        </div>
+        <div class="footer">
+            {% block footer%} {% endblock footer %}
+        </div>
+    </div>
+    {% block scripts %} {% endblock scripts %}
+    <script src="{% static 'js/main.js' %}">
+    </script>
+</body>
+<style>
+    @font-face {
+      font-family: "Pompadur";
+      src: url("{% static 'fonts/Pompadur.ttf' %}") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+    }
+    @font-face {
+      font-family: "nickelodeon";
+      src: url("{% static 'fonts/nickelodeon.ttf' %}") format("truetype");
+      font-style: normal;
+      font-weight: normal;
+    }
+</style>

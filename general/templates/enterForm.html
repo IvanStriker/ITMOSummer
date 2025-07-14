@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Вход {% endblock title %}
+{% block links %} <link rel="stylesheet" href='{% static "css/registerForm.css" %}'> {% endblock links %}
+{% block navbar %} {% endblock navbar %}
+
+{% block main%}
+    <h1 class="register-head">Вход</h1>
+    <form method="POST" action="/enter/do" id="enterForm">
+        {% csrf_token %}
+        <ul class="register-form-elems">
+            <li class="register-form-elem">
+                <label for="login">
+                    Логин
+                </label>
+                <input name="login" id="login"/>
+            </li>
+            <li class="register-form-elem">
+                <label for="password">
+                    Пароль
+                </label>
+                <input type="password" name="password" id="password"/>
+            </li>
+        </ul>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a href="/reg/" class="footer-button">Регистрация</a>
+    <a class="footer-button" id="enterButton">Вход</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/enterForm.js'%}"></script>
+{% endblock scripts %}

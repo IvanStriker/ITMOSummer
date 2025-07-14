@@ -1,0 +1,39 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+
+{% block links %}
+    <link rel="stylesheet" href='{% static "css/problemList.css" %}'>
+{% endblock links %}
+
+{% block main %}
+    <h3 class="personal-head">
+        Список задач
+    </h3>
+    <a href="/personal/new_problem/" class="plus-button"><i class="fas fa-plus"></i></a>
+    <ul class="problem-ul-elems">
+        {% for problem in problems %}
+            <li class="problem-ul-elem">
+                <label>№ {{problem.id}}</label>
+                <input value="{{problem.title}}" readonly/>
+                <a class="checkbox"><i class="fas fa-check"></i></a>
+                <a href="/personal/del_problem/{{problem.id}}" class="trash-button"><i class="fas fa-minus"></i></a>
+                <a href="/personal/edit_problem/{{problem.id}}" class="edit-button"><i class="fas fa-pen"></i></a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="problem-ul-elem sending-type">
+        <a class="checkbox"><i class="fas fa-check"></i></a>
+        <span class="big-label">Перекрёстное распределение</span>
+    </div>
+    <form action="/personal/problem_list/send" method="POST" class="invisible">
+        {% csrf_token %}
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="send">Разослать</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/problemList.js'%}"></script>
+{% endblock scripts %}

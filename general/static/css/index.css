@@ -1,0 +1,18 @@
+.board {
+    align-items: center;
+    justify-content: center;
+}
+
+.indexH1 {
+    margin: 0;
+    padding: 0;
+    font-family: "Pompadur";
+    font-size: 5em;
+    text-align: center;
+}
+
+@media(max-width:550px){
+	.indexH1 {
+	  font-size: 3em;
+	}
+}

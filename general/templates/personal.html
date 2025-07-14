@@ -1,0 +1,42 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %} <link rel="stylesheet" href='{% static "css/personal.css" %}'> {% endblock links %}
+{% block personalLinks %} {% endblock personalLinks %}
+{% block main%}
+    <h3 class="personal-head">
+        Личный кабинет
+    </h3>
+    <div class="personal-main-content">
+        <div class="personal-navbar">
+            <ul>
+                {% block personalNavbar %}{% endblock personalNavbar %}
+            </ul>
+        </div>
+        <div class="personal-short-data">
+            <img src="{% static 'images/portrait.png' %}" alt="Фото не загружено" class="personal-portrait">
+            <ul>
+                <li>
+                    <span class="personal-field">Имя</span>
+                    <div class="personal-value">{{user.firstName}}</div>
+                </li>
+                <li>
+                    <span class="personal-field">Фамилия</span>
+                    <div class="personal-value">{{user.lastName}}</div>
+                </li>
+                <li>
+                    <span class="personal-field">Логин</span>
+                    <div class="personal-value">{{user.login}}</div>
+                </li>
+                <li>
+                    <span class="personal-field">Email</span>
+                    <div class="personal-value">{{user.email}}</div>
+                </li>
+            </ul>
+            {% block personalShortData %}{% endblock personalShortData %}
+
+        </div>
+    </div>
+{% endblock main %}
+
+{% block footer%}
+{% endblock footer %}

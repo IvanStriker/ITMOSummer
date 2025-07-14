@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Регистрация {% endblock title %}
+{% block links %} <link rel="stylesheet" href='{% static "css/registerForm.css" %}'> {% endblock links %}
+{% block navbar %} {% endblock navbar %}
+
+{% block main%}
+    <h1 class="register-head">Регистрация</h1>
+    <form method="POST" action="/reg/create" id="registerForm">
+        {% csrf_token %}
+        <ul class="register-form-elems">
+            <li class="register-form-elem">
+                <label for="firstName">
+                    Имя
+                </label>
+                <input name="firstName" id="firstName"/>
+            </li>
+            <li class="register-form-elem">
+                <label for="lastName">
+                    Фамилия
+                </label>
+                <input name="lastName" id="lastName"/>
+            </li>
+            <li class="register-form-elem">
+                <label for="login">
+                    Логин
+                </label>
+                <input name="login" id="login"/>
+            </li>
+            <li class="register-form-elem">
+                <label for="password">
+                    Пароль
+                </label>
+                <input type="password" name="password" id="password"/>
+            </li>
+            <li class="register-form-elem">
+                <label for="email">
+                    Email
+                </label>
+                <input name="email" id="email"/>
+            </li>
+        </ul>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="registerButton">Регистрация</a>
+    <a href="/enter/" class="footer-button">Вход</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/registerForm.js'%}"></script>
+{% endblock scripts %}

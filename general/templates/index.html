@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Главная {% endblock title %}
+{% block links %} <link rel="stylesheet" href='{% static "css/index.css" %}'> {% endblock links %}
+{% block navbar %} {% endblock navbar %}
+
+{% block main%}
+    <h1 class="indexH1">Платформа для разметки</h1>
+{% endblock main %}
+
+{% block footer%}
+    <a href="/reg/" class="footer-button">Регистрация</a>
+    <a href="/enter/" class="footer-button">Вход</a>
+{% endblock footer %}

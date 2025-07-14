@@ -1,0 +1,238 @@
+.board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.personal-head {
+    margin: 10px 0 20px 0;
+    padding: 0;
+    font-family: "Pompadur";
+    font-size: 3em;
+    display: block;
+}
+
+.problem-ul-elems {
+    list-style: none;
+    flex: 1;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.problem-ul-elem {
+    position: relative;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.problem-ul-elem input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 1.2em;
+    text-align: left;
+    margin: 0 10px 0 0;
+    width: 470px;
+    height: 32px;
+    transition: inherit;
+    background: #fff;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+.problem-ul-elem input:hover {
+    background: #F0F0F0;
+    cursor: default;
+}
+
+.problem-ul-elem label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    text-align: center;
+    width: 120px;
+    height: 32px;
+}
+
+.big-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7em;
+    text-align: center;
+    min-width: 300px;
+    margin: 20px 0;
+    margin-left: 10px;
+    border-bottom: 2px solid #3498db;
+    border-radius: 50%;
+    height: 60px;
+}
+
+.checkbox {
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.checkbox:hover {
+    background: #2980b9;
+    cursor: pointer;
+}
+
+.edit-button {
+    width: 50px;
+    height: 45px;
+    background: #FFAE42;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #FFAE42;
+    border-radius: 15px;
+    transition: background 0.3s;
+    display: flex;
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.edit-button:hover {
+    background: #dd7538;
+    cursor: pointer;
+}
+
+.trash-button {
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 0, 0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.trash-button:hover {
+    background: #dc143c;
+    cursor: pointer;
+}
+
+.sending-type {
+    position: relative;
+    bottom: -30px;
+}
+
+.plus-button {
+    position: absolute;
+    right: 200px;
+    top: 74px;
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.plus-button:hover {
+    background: #2980b9;
+    cursor: pointer;
+}
+
+
+@media(max-width:550px){
+	.footer {
+	  flex-direction: column;
+	}
+	.footer-button {
+	  margin: 10px;
+	}
+	.main {
+	  min-width: calc(100% - 20px);
+	  max-width: calc(100% - 20px);
+	  min-height: calc(100% - 160px);
+	  padding: 0 10px;
+	  flex: 1;
+	  margin: 50px 0 160px 0;
+	}
+	.board {
+	  /*width: 80%;*/
+	  flex: none;
+	  flex-shrink: initial;
+	  margin: 0;
+	  margin-top: 10px;
+	  padding: 20px 10px;
+	}
+	.dashboard {
+	  position: relative;
+	}
+	.problem-ul-elem input {
+	  width: 100px;
+	  margin-right: 10px;
+	}
+	.problem-ul-elem label, .big-label {
+	  width: 60px;
+	  font-size: 1.3em;
+	}
+	.problem-number {
+	  display: none;
+	}
+	.big-label {
+	  margin: 0;
+	  min-width: 270px;
+	}
+	.plus-button {
+	  position: absolute;
+	  left: 30px;
+	  top: 40px;
+	}
+	.trash-button {
+	  margin-right: 10px;
+	}
+	.problem-ul-elems {
+	  padding: 0;
+	}
+	.personal-head {
+	  font-size: 2.5em;
+	  margin-left: 40px;
+	}
+	.edit-button {
+	  width: 40px;
+	  height: 40px;
+	}
+
+}

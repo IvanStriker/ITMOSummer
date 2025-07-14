@@ -1,0 +1,49 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href='{% static "css/personal.css" %}'>
+    <link rel="stylesheet" href='{% static "css/settings.css" %}'>
+{% endblock links %}
+{% block personalLinks %} {% endblock personalLinks %}
+{% block main%}
+    <h3 class="personal-head">
+        Настройки
+    </h3>
+    <form action="/personal/settings/set" method="POST" class="personal-main-content">
+    {% csrf_token %}
+        <div class="personal-short-data">
+            <img src="{% static 'images/portrait.png' %}" alt="Фото не загружено" class="personal-portrait">
+            <ul>
+                <li>
+                    <span class="personal-field">Имя</span>
+                    <input class="personal-value" name="firstName" value="{{user.firstName}}">
+                </li>
+                <li>
+                    <span class="personal-field">Фамилия</span>
+                    <input class="personal-value" name="lastName" value="{{user.lastName}}">
+                </li>
+                <li>
+                    <span class="personal-field">Логин</span>
+                    <input class="personal-value" name="login" value="{{user.login}}">
+                </li>
+                <li>
+                    <span class="personal-field">Email</span>
+                    <input class="personal-value" name="email" value="{{user.email}}">
+                </li>
+                <li>
+                    <span class="personal-field">Пароль</span>
+                    <input class="personal-value" name="password" value="{{user.password}}">
+                </li>
+            </ul>
+        </div>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="settingsSaveButton">Сохранить</a>
+    <a href="/personal/delete_account/" class="footer-button" id="deleteAccountButton">Удалить аккаунт</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/settings.js' %}"></script>
+{% endblock scripts %}

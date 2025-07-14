@@ -1,0 +1,30 @@
+.problem-state {
+    border: 0;
+    min-width: 80px;
+    height: 19px;
+    position: absolute;
+    left: -5px;
+    top: 40px;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media(max-width:550px){
+	.board {
+	  padding-top: 0;
+	}
+	.personal-head {
+	  margin-bottom: 10px;
+	}
+	.problem-state {
+	  top: 0;
+	  font-size: 1.5em;
+	}
+	.problem-form-elems {
+	  margin-top: 30px;
+	}
+
+}

@@ -1,0 +1,21 @@
+[Unit]
+
+Description=Gunicorn daemon
+
+Requires=gunicorn.socket
+
+After=network.target
+
+[Service]
+
+User=prom
+
+Group=www-data
+
+WorkingDirectory=/home/prom/serverproject/ITMO
+
+ExecStart=/home/prom/serverproject/ITMO/venv/bin/python /home/prom/serverproject/ITMO/venv/bin/gunicorn --log-level debug --access-logfile /home/prom/serverproject/ITMO/gunicorn.log --workers 3 --bind unix:/run/gunicorn.socket ITMO.wsgi:application
+
+[Install]
+
+WantedBy=multi-user.target

@@ -1,0 +1,47 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href='{% static "css/createProblemForm.css" %}'>
+{% endblock links %}
+{% block main %}
+    <h3 class="personal-head">
+        Редактирование задачи
+    </h3>
+    <form action="/personal/edit_problem/do/{{problem.id}}" method="POST" id="createProblemForm">
+        {% csrf_token %}
+        <span class="problem-number"><strong>№ {{problem.id}}</strong></span>
+        <ul class="problem-form-elems">
+            <li class="problem-form-elem">
+                <label>Название</label>
+                <input class="input" name="title" value="{{problem.title}}"/>
+            </li>
+            <li class="problem-form-elem">
+                <label>Описание</label>
+                <textarea class="input textarea" name="description">{{problem.description}}</textarea>
+            </li>
+            <li class="problem-form-elem">
+                <label class="big-label">Варианты ответов:</label>
+                <a class="plus-button" id="addAnswerButton"><i class="fas fa-plus"></i></a>
+            </li>
+        </ul>
+        <ul class="problem-form-elems" id="answers">
+            {% for ans in problem.answer_set.values %}
+                <li class="problem-form-elem">
+                    <label>№</label>
+                    <input class='input' style='margin-right: 20px' name='ans' value="{{ans.text}}"/>
+                    <a class='trash-button'><i class='fas fa-minus'></i></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="createProblemButton">Редактировать</a>
+    <a href="/personal/problem_list/" class="footer-button">К списку задач</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/createProblemForm.js'%}"></script>
+    <script src="{% static 'js/editProblemForm.js'%}"></script>
+{% endblock scripts %}

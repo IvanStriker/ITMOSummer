@@ -1,0 +1,40 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %}
+<link rel="stylesheet" href='{% static "css/createProblemForm.css" %}'>
+{% endblock links %}
+{% block main %}
+    <h3 class="personal-head">
+        Создание задачи
+    </h3>
+    <form action="/personal/new_problem/create" method="POST" id="createProblemForm">
+        {% csrf_token %}
+        <span class="problem-number"><strong>№...</strong></span>
+        <ul class="problem-form-elems">
+            <li class="problem-form-elem">
+                <label>Название</label>
+                <input class="input" name="title"/>
+            </li>
+            <li class="problem-form-elem">
+                <label>Описание</label>
+                <textarea class="input textarea" name="description"></textarea>
+            </li>
+            <li class="problem-form-elem">
+                <label class="big-label">Варианты ответов:</label>
+                <a class="plus-button" id="addAnswerButton"><i class="fas fa-plus"></i></a>
+            </li>
+        </ul>
+        <ul class="problem-form-elems" id="answers">
+
+        </ul>
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="createProblemButton">Создать</a>
+    <a href="/personal/problem_list/" class="footer-button">К списку задач</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/createProblemForm.js'%}"></script>
+{% endblock scripts %}

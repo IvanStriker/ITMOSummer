@@ -1,0 +1,21 @@
+.info-button {
+    width: 45px;
+    height: 45px;
+    background: #3498db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border: 1px solid #3498db;
+    border-radius: 15px;
+    transition: background 0.3s;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center
+}
+
+.info-button:hover {
+    background: #2980b9;
+    cursor: pointer;
+}

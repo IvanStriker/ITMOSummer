@@ -1,0 +1,12 @@
+server {
+    listen 8000;
+    server_name 91.204.150.11;
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/prom/serverproject/ITMO;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}

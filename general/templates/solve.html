@@ -1,0 +1,51 @@
+{% extends 'personal-base.html' %}
+{% load static %}
+{% block links %}
+    <link rel="stylesheet" href='{% static "css/createProblemForm.css" %}'>
+    <link rel="stylesheet" href='{% static "css/readonly.css" %}'>
+    <link rel="stylesheet" href='{% static "css/solve.css" %}'>
+{% endblock links %}
+
+{% block main %}
+    <h3 class="personal-head">
+        Решать задачу
+    </h3>
+    <form id="createProblemForm">
+        <span class="problem-number"><strong>№ {{problem.id}}</strong></span>
+        <ul class="problem-form-elems">
+            <li class="problem-form-elem">
+                <label>Название</label>
+                <input class="input" value="{{problem.title}}" disabled>
+            </li>
+            <li class="problem-form-elem">
+                <label>Описание</label>
+                <textarea class="input textarea" disabled>{{problem.description}}</textarea>
+            </li>
+            <li class="problem-form-elem">
+                <label class="big-label">Варианты ответов:</label>
+            </li>
+        </ul>
+        <ul class="problem-form-elems" id="answers">
+            {% for ans in problem.answer_set.values %}
+                <li class="problem-form-elem">
+                    <label>№</label>
+                    <label class="invisible">{{ans.id}}</label>
+                    <input class='input' style='margin-right: 20px' name='ans' value="{{ans.text}}" disabled/>
+                    <a class='checkboxSolve'><i class=''></i></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </form>
+    <form action="/personal/solve/do" method="POST" id="solveProblemForm" class="invisible">
+        {% csrf_token %}
+    </form>
+{% endblock main %}
+
+{% block footer%}
+    <a class="footer-button" id="solveButton">Решить</a>
+    <a href="/personal/problem_list/" class="footer-button">К списку задач</a>
+{% endblock footer %}
+
+{% block scripts %}
+    <script src="{% static 'js/solve.js' %}"></script>
+{% endblock scripts %}
