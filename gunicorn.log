@@ -12,3 +12,6 @@
  - - [14/Jul/2025:06:50:11 +0000] "GET /ext-js/app/common/zld_product_spec.js HTTP/1.0" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
  - - [14/Jul/2025:06:50:23 +0000] "GET /owncloud/status.php HTTP/1.0" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
  - - [14/Jul/2025:06:50:33 +0000] "GET /status.php HTTP/1.0" 404 179 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+ - - [14/Jul/2025:07:30:08 +0000] "GET / HTTP/1.0" 200 1512 "-" "-"
+ - - [14/Jul/2025:07:30:12 +0000] "GET / HTTP/1.0" 200 1512 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
+ - - [14/Jul/2025:07:30:53 +0000] "GET /.well-known/security.txt HTTP/1.0" 404 179 "-" "Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)"
